@@ -78,3 +78,26 @@ new Vue({
   render: h => h(App)
 });
 ```
+
+### 3.16 完善项目目录与文件
+* route 使用路由懒加载功能
+* utils/utils.ts 常用的函数的封装，比如 事件的节流（throttle）与防抖（debounce）方法
+* utils/config.ts 配置文件，比如github授权登录的回调地址、client_id、clinent_secret等
+* utils/urls.ts 请求接口地址，统一管理
+* utils/https.ts 请求的封装
+* 把 urls 和 https 挂载到 main.ts 里面的 Vue 的 prototype 上面
+* store（Vuex），项目结构
+```
+├── modules                         // 模块
+
+    ├── user.ts                     // 用户模块 
+    
+    ├── article.ts                 // 文章模块 
+
+├── types.ts                        // 类型
+
+└── index.ts                        // vuex 主入口
+```
+* store/index.ts 存放公共的信息，并导入其他模块
+* types.ts
+* user.ts
